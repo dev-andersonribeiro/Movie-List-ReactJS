@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { Container } from "./styles"
 
+import {apiKey} from "../../config/key"
+
 
 function Details() {
 
@@ -14,7 +16,7 @@ function Details() {
 
          // Consumindo a API
 
-         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=b8c99e96ea71a735e9b9101096c9782e&language=en-US`)
+         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
             .then(response => response.json())
             .then(data => {
 
